@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<h1>Update student</h1>
+	<div>
+	<form action="/student/{{student_to_update.student_id}}/update" method="POST" id="update-form">
+		<div>	
+		<label>Roll Number:</label>
+			<input type="text" name="roll" value ="{{current_roll}}" disabled>
+		</div>
+			<br>	
+		<div>
+			<label>First Name:</label>
+			<input type="text" name="f_name" value ="{{current_f_name}}" required>	
+		</div>
+		<br>
+		<div>
+			<label>Last Name:</label>
+			<input type="text" name="l_name" value ="{{current_l_name}}">
+				
+		</div>
+		<br>
+		<div>
+			<label>Select Courses: </label>
+			<input type="checkbox" name="courses" value = "course_1" 
+			{% if 1 in courses_selected_update %}
+				checked
+			{% endif %}
+			/>	
+			<label>MAD I</label>
+
+			<input type="checkbox" name="courses" value = "course_2" 
+			{% if 2 in courses_selected_update %}
+				checked
+			{% endif %}
+			/>	
+			<label>DBMS</label>
+
+			<input type="checkbox" name="courses" value = "course_3" 
+			{% if 3 in courses_selected_update %}
+				checked
+			{% endif %}
+			/>	
+			<label>PDSA</label>
+
+			<input type="checkbox" name="courses" value = "course_4" 
+			{% if 4 in courses_selected_update %}
+				checked
+			{% endif %}/>	
+			<label>BDM</label>
+		</div>
+		<br>
+			<input type="submit" value="Submit">
+	</form>
+</div>
+</body>
+</html>
